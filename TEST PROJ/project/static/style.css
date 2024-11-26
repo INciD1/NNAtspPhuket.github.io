@@ -1,0 +1,85 @@
+/* กำหนดพื้นหลังของหน้าเว็บเป็นการไล่สีแบบอวกาศ */
+body {
+    background: url('https://cdn.dribbble.com/userupload/10087443/file/original-ed1c1a661782538c3b29579493c2b1c4.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* การเคลื่อนไหวของพื้นหลัง */
+@keyframes spaceBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+body {
+    animation: spaceBackground 100s linear infinite;
+}
+
+/* ข้อความส่วนหัว */
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 255, 0.8);
+    margin-top: 50px;
+}
+
+/* ปุ่ม "Generate Route" */
+button {
+    display: block;
+    margin: 30px auto;
+    background-color: #00d9d9;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+button:hover {
+    background-color: #ff6f61;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+}
+
+/* ส่วน Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    background-color: #1a1a2e;
+    color: #00d9d9;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #00d9d9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* การเคลื่อนไหวของปุ่ม */
+button:active {
+    transform: scale(0.98);
+}
+
+/* ใช้ฟอนต์แบบอวกาศจาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
