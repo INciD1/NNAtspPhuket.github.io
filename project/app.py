@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Google Maps API Key
-API_KEY = "YOUR_API_KEY"
+API_KEY = "ํYOUR_API_KEY"
 gmaps = googlemaps.Client(key=API_KEY)
 
 # ฟังก์ชันตรวจสอบว่าเป็น Apartment หรือ Condo หรือที่อื่นๆ
