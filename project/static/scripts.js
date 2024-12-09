@@ -50,9 +50,9 @@ window.generateRoute = function () {
 
                     // Generate route info with distances
                     const routeInfo = legs.map((leg, index) => {
-                        const locationName = route[index].name;
+                        const locationName = route[index].name || `จุดที่ ${index + 1}`;
                         const distance = (leg.distance.value / 1000).toFixed(2);
-                        const marker = String.fromCharCode(65 + index);
+                        const marker = String.fromCharCode(65 + index); // ตัวอักษร A, B, C...
                         return `${marker} (${distance} กิโลเมตร) ${locationName}`;
                     }).join(" -> ");
 
@@ -73,19 +73,19 @@ window.generateRoute = function () {
 
 // ตัวอย่าง NNA Algorithm
 function calculateNNARoute(locations) {
-    // เริ่มต้นด้วยตำแหน่งแรก
-    const route = [locations[0]];
-    const remaining = locations.slice(1);
+    const route = [locations[0]]; // เริ่มจากตำแหน่งแรก
+    const remaining = locations.slice(1); // ตำแหน่งที่เหลือ
 
     while (remaining.length) {
         const last = route[route.length - 1];
         const nearest = remaining.reduce((a, b) =>
             distance(last, a) < distance(last, b) ? a : b
         );
-        route.push(nearest);
-        remaining.splice(remaining.indexOf(nearest), 1);
+        route.push(nearest); // เพิ่มจุดที่ใกล้ที่สุด
+        remaining.splice(remaining.indexOf(nearest), 1); // ลบออกจากรายการ
     }
-    return route;
+
+    return route; // ส่งคืนเส้นทางที่ครบถ้วน
 }
 
 // ฟังก์ชันสำหรับคำนวณระยะทาง
